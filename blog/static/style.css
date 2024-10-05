@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: visible;
+    max-width: 100%;
+    top: 0;
+    padding: 15px;
+    background: rgb(231, 212, 212);
+    z-index: 1000;
+}
+nav ul{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+nav ul li{
+    list-style: none;
+}
+nav .content{
+    display: inline-flex;
+   
+}
+nav form input{
+    padding: 7px;
+    border-radius: 15px;
+    border-style: none;
+}
+nav form button{
+    padding: 7px;
+    margin-left: 5px;
+    border-radius: 12px;
+    border-style: none;
+}

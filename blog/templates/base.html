@@ -1,0 +1,28 @@
+
+{% load static %}
+<header>
+    <title>Tara Blog</title>
+</header>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<link rel="stylesheet" href="{%static "style.css"%}" >
+<head>
+    <nav>
+        <ul>
+            <h3>Tara</h3>
+            <li>Home</li>
+            <li>Tech</li>
+            <li>Business</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+        <form>
+            <div class = "content">
+                    <input type="text" name="q" placeholder="Search a product" value="{{ query }}"></input>
+                    <button type="submit"><box-icon name='search'></box-icon></button>
+                    </div>
+                </form>
+    </nav>
+</head>
+<body>
+{% block content %}{% endblock content %}
+</body>
