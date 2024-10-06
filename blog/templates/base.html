@@ -15,7 +15,7 @@
             <li>About</li>
             <li>Contact</li>
         </ul>
-        <form>
+        <form method="GET" action="{% url 'search' %}">
             <div class = "content">
                     <input type="text" name="q" placeholder="Search a product" value="{{ query }}"></input>
                     <button type="submit"><box-icon name='search'></box-icon></button>
@@ -23,6 +23,5 @@
                 </form>
     </nav>
 </head>
-<body>
+
 {% block content %}{% endblock content %}
-</body>

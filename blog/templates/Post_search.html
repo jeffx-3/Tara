@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if query %}
+        <p>Results for: "{{ query }}"</p>
+        <p>Found {{results.count}} blog(s)</p>
+        {% if results %}
+            <ul>
+                {% for Post in Posts%}
+                <div class="posts">
+                        <div class="item">
+                       <a href="{% url 'blog_detail' product.id %}"><img src="{{Post.image.url}}"  alt="{{ Post.name }}"></a>
+                      <h2>{{ Post.title }}</h2>
+                      <p>${{ Post.body }}</p>
+                     
+                    
+                </div>
+        
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No blog posts found</p>
+        {% endif %}
+    {% else %}
+        <p>Please enter a search term.</p>
+    {% endif %}
+{% endblock %}
