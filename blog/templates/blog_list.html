@@ -2,18 +2,14 @@
 {% block content %}
 
 <div class="blogs">
-
-        <div class="posts">
-
-            {% for Post in Posts %}
-                  <div class="item">
-                 <a href="{% url 'blog_detail' post.id %}"><img src="{{Post.image.url}}"  alt="{{ Post.title }}"></a>
-                <h2> {{Post.title}} </h2>
-                <p> {{Post.body}} </p>
-              
-          </div>
-          </div>
-            {% endfor %}
-
-
+      {% for post in posts %}
+            <div class="item">
+           <a href="{% url 'blog_detail' post.id %}"><img src="{{post.image.url}}"  alt="{{ post.name }}"></a>
+          <h2>{{ post.title }}</h2>
+          <p>${{ post.body|truncatewords:100 }}</p>
+            <a href="{% url 'blog_detail' post.id %}"><button>Read More<box-icon name='right-arrow-alt'></box-icon></button></a>
+         
+        
+    </div>
+      {% endfor %}
 {% endblock %}

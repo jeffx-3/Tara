@@ -1,13 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import Post
 
 # blog list(home) view
 def blog_list(request):
     posts = Post.objects.all()
-    return render(request, 'blog_list.html',  {'posts': posts})
-#blog view
-def blog_detail(request):
-    return render(request, 'blog_detail.html')
+    context = {
+        'posts': posts
+    }
+    return render(request, 'blog_list.html', context)
+#
+# Post Detail View
+def blog_detail(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    return render(request, 'blog_detail.html', {'post': post})
+
 
 #search view
 def search(request):

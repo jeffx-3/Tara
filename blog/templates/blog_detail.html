@@ -1,2 +1,15 @@
+{% extends "base.html" %}
 
+{% block content %}
+  <div class="blog_detail">
+    <div style="text-align: center;">
+    <img src="{{post.image.url}}" alt="{{ post.title }}">
+    </div>
+    <div class="details">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body }}</p>
+    
+
+  </div>
+{% endblock %}
 
